@@ -13,7 +13,6 @@ class App extends Component {
         { value: 'walk the dog' }
       ]
     }
-    console.log(this.state.items)
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -21,12 +20,13 @@ class App extends Component {
     this.setState({ text: event.target.value })
   }
 
-  // addItem () {
-  // }
-
-  // should we use something to use enter as submit, or just use button?
-  // enterText (e) {
-  // }
+  addItem (e) {
+    const newItem = { 'value': this.state.text }
+    this.setState({
+      items: this.state.items.concat(newItem)
+    })
+    e.preventDefault()
+  }
 
   render () {
     const items = this.state.items
@@ -41,10 +41,10 @@ class App extends Component {
                 onChange={(e) => this.handleChange(e)}
                 placeholder='add a "to do" item'
                 value={this.state.text} />
-              <button className='add-item button is-info'
-                type='submit'
-                onSubmit={items.push}>add</button>
-              <Item text={this.state.text} item={this.state.items} />
+              <button className='add-item button is-info' onClick={(e) => this.addItem(e)}
+              >add</button>
+              {items.map((item, idx) =>
+                <Item itemValue={item.value} key={idx} />)}
             </div>
           </div>
         </form>

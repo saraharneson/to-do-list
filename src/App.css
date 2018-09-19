@@ -23,3 +23,31 @@ h1 {
 .add-item {
   height: 50px;
 }
+
+.control {
+  display: block;
+}
+
+.displayed-items {
+  width: 80%;
+  font-size: 1.75rem;
+  font-weight: 100;
+  margin: 0 20px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.delete {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.check-box {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 20px 0 10px;
+}
+
+.check-box:hover {
+  color: #CD5C5C;
+}
