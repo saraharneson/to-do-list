@@ -34,14 +34,14 @@ class App extends Component {
       <React.Fragment>
         <h1 className='header'>To Do List</h1>
         <form>
-          <div className='field'>
+          <div className='field is-centered'>
             <div className='control'>
               <input className='input is-large'
                 type='text'
                 onChange={(e) => this.handleChange(e)}
                 placeholder='add a "to do" item'
                 value={this.state.text} />
-              <button className='add-item button is-info' onClick={(e) => this.addItem(e)}
+              <button className='add-item button is-primary' onClick={(e) => this.addItem(e)}
               >add</button>
               {items.map((item, idx) =>
                 <Item itemValue={item.value} key={idx} />)}

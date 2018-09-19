@@ -16,25 +16,34 @@ h1 {
   height: 50px;
   font-weight: 100;
   padding: 10px;
-  margin: 0 20px;
-  border-radius: 3px;
+  margin: 0 0 20px 20px;
+  border-radius: 3px 0 0 3px;
+  border-right: 0;
 }
 
 .add-item {
   height: 50px;
+  border-radius: 0 3px 3px 0;
 }
 
 .control {
   display: block;
+  margin: 0 auto;
 }
 
 .displayed-items {
   width: 80%;
   font-size: 1.75rem;
   font-weight: 100;
-  margin: 0 20px;
-  vertical-align: top;
+  margin: 0 20px 0 5px;
+  /* vertical-align: top; */
   display: inline-block;
+}
+
+.check-box {
+  display: inline-block;
+  vertical-align: top; 
+  margin: 0 8px 0 10px;
 }
 
 .delete {
@@ -42,12 +51,17 @@ h1 {
   vertical-align: top;
 }
 
-.check-box {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 20px 0 10px;
+.delete:hover {
+  color: #CD5C5C;
 }
 
-.check-box:hover {
-  color: #CD5C5C;
+.edit-field {
+  width: 80%;
+  font-size: 1.75rem;
+  height: 50px;
+  font-weight: 100;
+  padding: 10px;
+  margin: 0 0 20px 20px;
+  border-radius: 3px;
+  border-right: 0;
 }
