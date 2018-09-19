@@ -16,10 +16,10 @@ h1 {
   height: 50px;
   font-weight: 100;
   padding: 10px;
-  margin: 0 10px;
+  margin: 0 20px;
   border-radius: 3px;
 }
 
-button {
+.add-item {
   height: 50px;
 }

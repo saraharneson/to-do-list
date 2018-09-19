@@ -6,10 +6,20 @@ class Item extends Component {
   constructor () {
     super()
     this.state = {
-      isEditing: false,
-      text: '',
-      items: []
+      isEditing: false
     }
   }
 
-  export default Item
+  render () {
+    return (
+      <React.Fragment>
+        {this.state.isEditing
+          ? <h1>waiting for items!</h1>
+          : <h1>{this.props.item.value}</h1>
+        }
+      </React.Fragment>
+    )
+  }
+}
+
+export default Item
