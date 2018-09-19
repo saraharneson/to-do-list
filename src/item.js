@@ -28,6 +28,10 @@ class Item extends Component {
     })
   }
 
+  preventDefault (e) {
+    e.preventDefault()
+  }
+
   render () {
     return (
       <React.Fragment>
@@ -40,7 +44,9 @@ class Item extends Component {
           : <div className='item-list'
             onDoubleClick={() => this.edit()}>
             <input className='check-box' type='checkbox' />
-            <p className='displayed-items'>{this.state.text} <button className='delete is-small'
+            <p className='displayed-items'>{this.state.text} <button
+              className='delete is-small'
+              onClick={(e) => this.preventDefault(e)}
             /></p>
           </div>
         }
