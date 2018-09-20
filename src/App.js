@@ -8,11 +8,9 @@ class App extends Component {
     super()
     this.state = {
       text: '',
-      items: [
-        { value: 'wash the car' },
-        { value: 'walk the dog' }
-      ]
+      items: []
     }
+    this.deleteItem = this.deleteItem.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -20,20 +18,31 @@ class App extends Component {
     this.setState({ text: event.target.value })
   }
 
+  deleteItem (e) {
+    const itemsCopy = [...this.state.items]
+    const idx = itemsCopy.indexOf(e.target.value)
+    itemsCopy.splice(idx, 1)
+    this.setState({
+      items: itemsCopy
+    })
+  }
+
   addItem (e) {
-    const newItem = { 'value': this.state.text }
+    const newItem = { 'value': this.state.text.trim() }
     this.setState({
       items: this.state.items.concat(newItem)
     })
-    e.preventDefault()
+    this.setState({
+      text: ''
+    })
   }
 
   render () {
-    const items = this.state.items
+    const items = [...this.state.items]
     return (
       <React.Fragment>
         <h1 className='header'>To Do List</h1>
-        <form>
+        <div>
           <div className='field is-centered'>
             <div className='control'>
               <input className='input is-large'
@@ -44,10 +53,10 @@ class App extends Component {
               <button className='add-item button is-primary' onClick={(e) => this.addItem(e)}
               >add</button>
               {items.map((item, idx) =>
-                <Item itemValue={item.value} key={idx} />)}
+                <Item deleteItem={this.deleteItem} itemValue={item.value} key={idx} items={this.state.items} />)}
             </div>
           </div>
-        </form>
+        </div>
       </React.Fragment>
     )
   }
