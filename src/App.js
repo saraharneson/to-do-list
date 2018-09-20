@@ -20,7 +20,7 @@ class App extends Component {
 
   deleteItem (e) {
     const itemsCopy = [...this.state.items]
-    const idx = itemsCopy.indexOf(e.target.value)
+    const idx = itemsCopy.indexOf(e.target.value.key)
     itemsCopy.splice(idx, 1)
     this.setState({
       items: itemsCopy
@@ -53,7 +53,7 @@ class App extends Component {
               <button className='add-item button is-primary' onClick={(e) => this.addItem(e)}
               >add</button>
               {items.map((item, idx) =>
-                <Item deleteItem={this.deleteItem} itemValue={item.value} key={idx} items={this.state.items} />)}
+                <Item deleteItem={this.deleteItem[idx]} itemValue={item.value} key={idx} items={this.state.items} />)}
             </div>
           </div>
         </div>

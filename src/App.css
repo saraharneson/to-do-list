@@ -43,12 +43,13 @@ h1 {
 .check-box {
   display: inline-block;
   vertical-align: top; 
-  margin: 0 8px 0 10px;
+  margin: 0 10px 5px 20px;
 }
 
 .delete {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
 }
 
 .delete:hover {
@@ -67,4 +68,7 @@ h1 {
 }
 .item-list:hover {
   cursor: pointer;
+
+item-list {
+  margin: 0 20px;
 }
